@@ -1,4 +1,5 @@
-[all]
+[ansible]
 ansiblehost.enryoku.tech
+[webservers]
 webserver01.enryoku.tech
 webserver02.enryoku.tech
