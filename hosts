@@ -3,3 +3,5 @@ ansiblehost.enryoku.tech
 [webservers]
 webserver01.enryoku.tech
 webserver02.enryoku.tech
+webserver03.enryoku.tech
+webserver04.enryoku.tech
