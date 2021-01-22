@@ -10,4 +10,4 @@ webserver02.enryoku.tech
 webserver03.enryoku.tech
 webserver04.enryoku.tech
 [debian:vars]
-ansible_python_interpreter: auto_silent
+ansible_python_interpreter=auto_silent
