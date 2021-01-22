@@ -1,7 +1,13 @@
 [ansible]
 ansiblehost.enryoku.tech
 [webservers]
+centos
+debian
+[centos:children]
 webserver01.enryoku.tech
 webserver02.enryoku.tech
+[debian:children]
 webserver03.enryoku.tech
 webserver04.enryoku.tech
+[debian:vars]
+ansible_python_interpreter: auto_silent
