@@ -1,4 +1,6 @@
-# nginx OSS
-#- src: https://github.com/aikata/nginx_ansible_base.git
+- src: https://github.com/aikata/nginx_ansible_base.git
+  name: nginx_ansible_base
 - src: 'git+ssh://git@bitbucket.org/nextiva/ansible-nginx-plus.git'
   name: ansible-nginx-plus
+- src: https://github.com/aikata/test.git
+  name: test
