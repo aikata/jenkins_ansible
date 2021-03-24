@@ -1,17 +1,52 @@
-ansible:
-  hosts:
-    ansiblehost.enryoku.tech:
-      ansible_host: 192.168.1.5
-
-webservers:
-  hosts:
-    webserver01.enryoku.tech:
-      ansible_host: 192.168.1.6
-    webserver02.enryoku.tech:
-      ansible_host: 192.168.1.7
-    webserver03.enryoku.tech:
-      ansible_host: 192.168.1.9
-      ansible_python_interpreter: auto_silent
-    webserver04.enryoku.tech:
-      ansible_host: 192.168.1.10
-      ansible_python_interpreter: auto_silent
+---
+all:
+  children:
+    virtualbox:
+      children:
+        elasticstack:
+          children:
+            elasticsearch:
+              hosts:
+                es01.enryoku.tech:
+                es02.enryoku.tech:
+                es03.enryoku.tech:
+            logstash:
+              hosts:
+                ls01.enryoku.tech:
+                ls02.enryoku.tech:
+            kibana:
+              hosts:
+                kb01.enryoku.tech:
+                kb02.enryoku.tech:
+            elastalert:
+              hosts:
+                ea01.enryoku.tech:
+                ea02.enryoku.tech:
+        nginx:
+          children:
+            kibanaproxy:
+              hosts:
+                np01.enryoku.tech:
+                np02.enryoku.tech:
+            planetnginx:
+              hosts:
+                webserver01.enryoku.tech:
+                webserver02.enryoku.tech:
+                webserver03.enryoku.tech:
+                webserver04.enryoku.tech:
+        dockercluster:
+          children:
+            dockerhosts:
+              hosts:
+                dockerhost01.enryoku.tech:
+                dockerhost02.enryoku.tech:
+                dockerhost03.enryoku.tech:
+                dockerhost04.enryoku.tech:
+                dockerhost05.enryoku.tech:
+            vaulthosts:
+              hosts:
+                vaulthost01.enryoku.tech:
+                vaulthost02.enryoku.tech:
+                vaulthost03.enryoku.tech:
+  vars:
+    ansible_python_interpreter: auto_silent
