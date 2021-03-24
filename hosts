@@ -1,0 +1,17 @@
+ansible:
+  hosts:
+    ansiblehost.enryoku.tech:
+      ansible_host: 192.168.1.5
+
+webservers:
+  hosts:
+    webserver01.enryoku.tech:
+      ansible_host: 192.168.1.6
+    webserver02.enryoku.tech:
+      ansible_host: 192.168.1.7
+    webserver03.enryoku.tech:
+      ansible_host: 192.168.1.9
+      ansible_python_interpreter: auto_silent
+    webserver04.enryoku.tech:
+      ansible_host: 192.168.1.10
+      ansible_python_interpreter: auto_silent
